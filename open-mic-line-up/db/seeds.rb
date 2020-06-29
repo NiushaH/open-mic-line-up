@@ -18,3 +18,18 @@ Signup.create(song: "Talkin' 'Bout a Revolution", artist: "Tracy Chapman", genre
 Signup.create(song: "Should've Said No", artist: "Taylor Swift", genre: "Country", user_id: taylor.id)
 Signup.create(song: "The Outside", artist: "Taylor Swift", genre: "Country", user_id: taylor.id)
 
+
+# Use ActiveRecord to pre-associate data:
+
+madonna.signups.create(song: "Music", artist: "Madonna", genre: "Pop")
+tracy.signups.create(song: "Heaven's Here on Earth", artist: "Tracy Chapman", genre: "Folk")
+taylor.signups.create(song: "Shake It Off", artist: "Taylor Swift", genre: "Pop")
+
+madonna_signup = madonna.signups.create(song: "Frozen", artist: "Madonna", genre: "Pop")
+madonna_signup.save
+
+tracy_signup = tracy.signups.create(song: "Cold Feet", artist: "Tracy Chapman", genre: "Folk")
+tracy_signup.save
+
+taylor_signup = taylor.signups.create(song: "Fifteen", artist: "Taylor Swift", genre: "Pop")
+taylor_signup.save
