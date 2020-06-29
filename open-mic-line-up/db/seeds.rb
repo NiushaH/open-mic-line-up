@@ -4,9 +4,9 @@
 
 # Create 2 users
 
-madonna = User.create(name: "Madonna", cellphone: 2025551212, password_digest: password1234)
-tracy =  User.create(name: "Tracy Chapman", cellphone: 2125551212, password_digest: password1234)
-taylor =  User.create(name: "Taylor Swift", cellphone: 6155551212, password_digest: password1234)
+madonna = User.create(name: "Madonna", cellphone: "2025551212", password_digest: "password1234")
+tracy =  User.create(name: "Tracy Chapman", cellphone: "2125551212", password_digest: "password1234")
+taylor =  User.create(name: "Taylor Swift", cellphone: "6155551212", password_digest: "password1234")
 
 
 # Create some signups
