@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-
-    has_many :signups
+  has_secure_password
+  has_many :signups
 end
