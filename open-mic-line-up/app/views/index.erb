@@ -1,0 +1,17 @@
+<h1>Welcome to Open Mic World!</h1>
+<h2>All Signups</h2>
+    <% if logged_in? %>
+      <a href="/signups/new"> Sign Up To Perform at an Open Mic Night </a>
+      <a href="/users/logout"> Log Out </a>
+
+      <p>Welcome, <%=current_user.username %></p>
+        <% @signups.each do |signups| %>
+        <a href="/signups/signups<%= signup.id %>"><%= user.name %></a><br>
+        <a class="button" href="/signups/signups">Signups</a>
+        <a class="button" href="/">Home</a>
+    <% else %>
+      <h2>Welcome to Open Mic World!</h2>
+      <p>Please login or signup below:</p>
+      <a class="button" href="/users/login">Log In</a>
+      <a class="button" href="/users/signup">Sign Up</a>
+    <%end %>
