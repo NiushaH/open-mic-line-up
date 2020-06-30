@@ -9,6 +9,6 @@ use Rack::MethodOverride
 
 # mount other controllers with "use"
 use SessionsController
-use SignupsController
+use PerformancesController
 use UsersController
 run ApplicationController
