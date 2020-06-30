@@ -7,7 +7,7 @@ I am going to build an app where a user will be able to sign up for open microph
  - sign up, log in and log out.
 
 ## As a user, I can...
- - sign up for open mic night.
+ - register a song performance for open mic night.
  - see all their open mic night performances.
  - edit their open mic night performances.
  - delete their open mic night performances.
@@ -37,6 +37,6 @@ Users can signup to use the app, log in and out, sign up to participate in open 
 # Stretch Goals
 CSS - make it look really nice
 TDD
+Create a table of PerformanceTypes (singing, comedy, poetry, music, storytelling) for user to register performance(s)
 Create a EventAdmin user and EventNight models
-Include an option for the User to perform more than one performance
-Create a set (line up agenda) for the open mic night viewable by event
+Allow EventAdmins to create a set list / event line up for the open mic night viewable by Performers
