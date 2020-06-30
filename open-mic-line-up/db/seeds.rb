@@ -25,11 +25,11 @@ madonna.signups.create(song: "Music", artist: "Madonna", genre: "Pop")
 tracy.signups.create(song: "Heaven's Here on Earth", artist: "Tracy Chapman", genre: "Folk")
 taylor.signups.create(song: "Shake It Off", artist: "Taylor Swift", genre: "Pop")
 
-madonna_signup = madonna.signups.create(song: "Frozen", artist: "Madonna", genre: "Pop")
+madonna_signup = madonna.signups.build(song: "Frozen", artist: "Madonna", genre: "Pop")
 madonna_signup.save
 
-tracy_signup = tracy.signups.create(song: "Cold Feet", artist: "Tracy Chapman", genre: "Folk")
+tracy_signup = tracy.signups.build(song: "Cold Feet", artist: "Tracy Chapman", genre: "Folk")
 tracy_signup.save
 
-taylor_signup = taylor.signups.create(song: "Fifteen", artist: "Taylor Swift", genre: "Pop")
+taylor_signup = taylor.signups.build(song: "Fifteen", artist: "Taylor Swift", genre: "Pop")
 taylor_signup.save
