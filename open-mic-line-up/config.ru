@@ -5,7 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
-
-
-
+use SessionsController
+use SignupsController
+use UsersController
 run ApplicationController
