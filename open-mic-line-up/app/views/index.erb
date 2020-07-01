@@ -4,9 +4,13 @@
       <a href="/performances/new"> Sign Up To Perform at an Open Mic Night </a>
       <a href="/users/logout"> Log Out </a>
 
-      <p>Welcome, <%=current_user.username %></p>
-        <% @performances.each do |performances| %>
-        <a href="/performances/performances<%= performances.id %>"><%= user.name %></a><br>
+      <p>Welcome, <%=current_user.name %></p>
+        <% @performances.each do |performance| %>
+        <a href="/performances/performances<%= performance.id %>"><br>
+        <%= performance.user_id.name %></a><br>
+        <%= performance.song %></a><br>
+        <%= performance.artist %></a><br>
+        <%= performance.genre %></a><br>
         <% end %>
         <a class="button" href="/performances/performances">Performances</a>
         <a class="button" href="/">Home</a>

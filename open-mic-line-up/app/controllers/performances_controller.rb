@@ -12,6 +12,7 @@ class PerformancesController < ApplicationController
     post '/performances/performances' do
         if logged_in?
           if params[:song] == ""
+            #  || params[:artist] == "" || params[:genre] == ""
             redirect to "/performances/new"
           else
             @performance = current_user.performances.build(song: params[:song], artist: params[:artist], genre: params[:genre])
