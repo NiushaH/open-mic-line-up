@@ -9,20 +9,19 @@ class SessionsController < ApplicationController
 # this route's purpose is to receive the login form
 # find the user, and login the user (create a session)
   post '/users/login' do
+binding.pry
     # Find the user
     @user = User.find_by(cellphone: params[:cellphone])
-    # Authenticate the user 
+    # Authenticate the user   [WHY DOESN'T PARAMS USE PASSWORD_DIGEST]
     # Login the user
     # Redirect to the user's landing page
-    if  @user && @user.authenticate(params[:password])
+    if @user.authenticate(params[:password])
       # if truthy value, login the user and create their session
       session[:user_id] = @user.id
       puts session
       redirect "/users/#{@user.id}"
     else
-      #tell user they entered invalid credentials
-      #redirect to login page
-      
+      #tell user they entered invalid credentials      
       redirect '/users/login'
     end
   end
