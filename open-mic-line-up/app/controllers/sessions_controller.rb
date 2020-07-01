@@ -33,15 +33,30 @@ class SessionsController < ApplicationController
   end
 
   post '/users/signup' do
-binding.pry
     # create new user and persist the new user to the database via params
+    # incorporate condition that value user enters != nil and/or custom validator
+    if params[:name] != "" && params[:cellphone] != "" && params[:password] != ""
+      # valid input
+      @user = User.create(params)
+      # runs a new HTTP GET request better than rendering erb template because
+      #   separation of concerns -- it's the post route's job to create a new user, that's it (not to show the new user) 
+      #   keeps it DRY to use a get request to get to a page,
+      #   when you use erb you get access to any instance variable before erb was called
+      #   cleaner to requery the database
+      # route or controller's action to show you new user is separate from this POST request
+      # left @user as an instance variable in case in future want to save what user input into the form and allow user to resubmit after fixing entries
+      redirect "/users/#{@user.id}"
+    # Stretch Goal: refactor this to use ActiveRecord validations
+    else
+    # not valid input
     
+    end
   end
 
 
 # user SHOW route where user registers for performances
   get '/users/:id' do
-    erb :'users/show'
+    erb :'performances/performances'
   end
 
 #   post '/users/:id' do
