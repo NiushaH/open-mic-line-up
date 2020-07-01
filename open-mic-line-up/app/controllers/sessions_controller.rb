@@ -49,13 +49,14 @@ class SessionsController < ApplicationController
     # Stretch Goal: refactor this to use ActiveRecord validations
     else
     # not valid input
-    
+
     end
   end
 
 
 # user SHOW route where user registers for performances
   get '/users/:id' do
+    @user = User.find_by(id: params[:id])
     erb :'performances/performances'
   end
 
