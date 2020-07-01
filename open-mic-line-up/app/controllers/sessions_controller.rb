@@ -38,6 +38,7 @@ class SessionsController < ApplicationController
     if params[:name] != "" && params[:cellphone] != "" && params[:password] != ""
       # valid input
       @user = User.create(params)
+binding.pry
       # runs a new HTTP GET request better than rendering erb template because
       #   separation of concerns -- it's the post route's job to create a new user, that's it (not to show the new user) 
       #   keeps it DRY to use a get request to get to a page,
