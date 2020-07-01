@@ -32,9 +32,21 @@ class SessionsController < ApplicationController
     erb :'users/signup'
   end
 
+  post '/users/signup' do
+binding.pry
+    # create new user and persist the new user to the database via params
+    
+  end
+
+
 # user SHOW route where user registers for performances
   get '/users/:id' do
     erb :'users/show'
   end
+
+#   post '/users/:id' do
+#     erb :'users/__???__'
+#   end
+
 
 end
