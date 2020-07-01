@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
 
 # user SHOW route where user registers for performances
   get '/users/:id' do
-    "this will be the user show route"
+    erb :'users/show'
   end
 
 end
