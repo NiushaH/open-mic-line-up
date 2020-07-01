@@ -55,6 +55,7 @@ class SessionsController < ApplicationController
 
 
 # user SHOW route where user registers for performances
+# the dynamic URL identifier gets stored in the params hash key along with the argument passed in as its value
   get '/users/:id' do
     @user = User.find_by(id: params[:id])
     erb :'performances/performances'
@@ -63,6 +64,11 @@ class SessionsController < ApplicationController
 #   post '/users/:id' do
 #     erb :'users/__???__'
 #   end
+
+
+
+# DELETE USER.ID == 6 for practice -- duplicate entry
+
 
 
 end
