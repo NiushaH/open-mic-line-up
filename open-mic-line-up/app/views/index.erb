@@ -5,15 +5,14 @@
       <a href="/users/logout"> Log Out </a>
 
       <p>Welcome, <%=current_user.name %></p>
-        <% @performances.each do |performance| %>
-        <a href="/performances/performances<%= performance.id %>"><br>
-        <%= performance.user_id.name %></a><br>
-        <%= performance.song %></a><br>
-        <%= performance.artist %></a><br>
-        <%= performance.genre %></a><br>
-        <% end %>
-        <a class="button" href="/performances/performances">Performances</a>
-        <a class="button" href="/">Home</a>
+        <%# <% @performances.each do |performance| %>
+        <%# <a href="/performances/performances<%= performance.id %>"><br> %>
+        <%# <%= performance.user_id.name %></a><br> %>
+        <%# <%= performance.song %></a><br> %>
+        <%# <%= performance.artist %></a><br> %>
+        <%# <%= performance.genre %></a><br> %>
+        <%# <% end %> %>
+
     <% else %>
       <h3>Please login to register for a performance or signup for OpenMicWorld by clicking Sign Up below.</h3>
       <a class="button" href="/users/login">Log In</a>

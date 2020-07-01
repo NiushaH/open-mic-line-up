@@ -26,6 +26,30 @@ class PerformancesController < ApplicationController
           redirect to '/users/login'
         end
     end
+   
+
+
+    get '/performances/new' do
+      # if logged_in? == true allow user to add/register new performance
+        erb :'performances/new'
+
+      # else ask user to login or signup
+      
+    end
+
+    post '/performances/new' do
     
+    end
+
+
+
+    get '/performances/show' do
+      erb :'performances/show'
+    end
+
+    post '/performances/show' do
+    
+    end
+
 
 end

@@ -71,5 +71,15 @@ binding.pry
 # DELETE USER.ID == 6 for practice -- duplicate entry
 
 
+# LOGOUT ROUTE
+  get '/users/logout' do
+    # redirect_if_logged_out
+    erb :'users/logout'
+  end
+
+  post '/users/logout' do
+    # log user out, end user session
+    
+  end
 
 end
