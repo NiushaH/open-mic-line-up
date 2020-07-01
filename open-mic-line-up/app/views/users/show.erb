@@ -1,3 +1,12 @@
-<h2><%= @user.name %>'s Account Page</h2>
+<h2> Welcome, <%= current_user.username %> to Your Account Page</h2>
 <h3>Cell Phone that accepts text messages: </h3>
 <h4><%= @user.cellphone %></h4>
+
+<h3> And, here are all your performances </h3>
+    <% @performances.each do |performance| %>
+    <div>
+        <%= performance.song %>
+        <%= performance.artist %>
+        <%= performance.genre %>
+    </div>
+    <% end %>

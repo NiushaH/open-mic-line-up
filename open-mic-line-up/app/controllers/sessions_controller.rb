@@ -27,8 +27,9 @@ class SessionsController < ApplicationController
   end
 
 # routes and views to allow user to signup for Open Mic World
+# render the signup form, save user credentials in db
   get '/users/signup' do
-    # erb :'users/signup'
+    erb :'users/signup'
   end
 
 # user SHOW route where user registers for performances
