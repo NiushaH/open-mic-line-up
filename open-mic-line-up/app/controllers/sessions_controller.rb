@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     # Authenticate the user 
     # Login the user
     # Redirect to the user's landing page
-    if @user.authenticate(params[:password])
+    if  @user && @user.authenticate(params[:password])
       # if truthy value, login the user and create their session
       session[:user_id] = @user.id
       puts session
