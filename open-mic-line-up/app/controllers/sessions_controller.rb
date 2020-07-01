@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 # this route's purpose is to receive the login form
 # find the user, and login the user (create a session)
   post '/users/login' do
-binding.pry
+# binding.pry
     # Find the user
     @user = User.find_by(cellphone: params[:cellphone])
     # Authenticate the user   [WHY DOESN'T PARAMS USE PASSWORD_DIGEST]
