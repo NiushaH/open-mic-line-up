@@ -63,6 +63,7 @@ class SessionsController < ApplicationController
 # the dynamic URL identifier gets stored in the params hash key along with the argument passed in as its value
   get '/users/:id' do
     @user = User.find_by(id: params[:id])
+    redirect_if_not_logged_in
     erb :'/users/show'
   end
 
@@ -82,9 +83,9 @@ class SessionsController < ApplicationController
     erb :'/'
   end
 
-  post '/users/logout' do
-    # log user out, end user session
+#   post '/users/logout' do
+#     # log user out, end user session
     
-  end
+#   end
 
 end

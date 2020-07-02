@@ -3,11 +3,11 @@
 <h4><%= current_user.cellphone %></h4>
 
 <h3> And, here are all your OpenMicWorld registered performances </h3>
-    <% @performances.each do |performance| %>
-    <h4> <a href="/performances/<%= performance.id %>"><%= performance.created_at %></a></h4>
-    <div>
-        <p><strong>Song: <%= performance.song %></strong></p>
-        <p> Artist: <%= performance.artist %></p>
-        <p> Genre: <%= performance.genre %></p>
-    </div>
+    <%# <% @performances.each do |performance| %>
+    <%# <h4> <a href="/performances/<%= performance.id %>"><%= performance.created_at %></a></h4>
+    <%# <div> %>
+        <%# <p><strong>Song: <%= performance.song %></strong></p> %>
+        <%# <p> Artist/: <%= performance.artist %></p> %>
+        <%# <p> Genre: <%= performance.genre %></p> %>
+    <%# </div> %> %>
     <% end %>

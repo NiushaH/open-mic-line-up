@@ -1,0 +1,9 @@
+ALL PERFORMANCES
+<% @performances.each do |performance| %>
+  <h4><a href="/performances/<%= performance.id %>"></a></h4>
+  <strong><%= performance.song %></strong>
+  <p><%= performance.artist %></p>
+  <p>Genre: <%= performance.genre %></p>
+  <p>Performaed By OpenMicWorld User: <%= performance.user.name %></p>
+  <br><br>
+<% end %>
