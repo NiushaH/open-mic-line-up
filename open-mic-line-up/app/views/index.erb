@@ -1,10 +1,7 @@
-<h1>Welcome to Open Mic World!</h1>
-<h2>All Performances</h2>
     <% if logged_in? %>
-      <a href="/performances/new"> Sign Up To Perform at an Open Mic Night </a>
-      <a href="/users/logout"> Log Out </a>
-
-      <p>Welcome, <%=current_user.name %></p>
+      
+      <h1><p>Hi <%=current_user.name %>, welcome to OpenMicWorld!</p></h1>
+      <h2>&emsp; Below Are All Users' Registered Performances</h2>
         <%# <% @performances.each do |performance| %>
         <%# <a href="/performances/performances<%= performance.id %>"><br> %>
         <%# <%= performance.user_id.name %></a><br> %>
@@ -12,7 +9,12 @@
         <%# <%= performance.artist %></a><br> %>
         <%# <%= performance.genre %></a><br> %>
         <%# <% end %> %>
-
+      <br>
+      <br>
+      <a href="/performances/new"> If you're ready to sign up to perform at an open mic night, click here.</a>
+      <br>
+      <br>
+      <a class="buttom" href="/users/logout"> Log Out </a>
     <% else %>
       <h3>Please login to register for a performance or signup for OpenMicWorld by clicking Sign Up below.</h3>
       <a class="button" href="/users/login">Log In</a>
