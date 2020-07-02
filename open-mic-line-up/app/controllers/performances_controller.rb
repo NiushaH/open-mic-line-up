@@ -1,7 +1,7 @@
 class PerformancesController < ApplicationController
 
   get '/performances' do
-    @performances = Performances.all
+    @performances = Performance.all
     erb :'performances/index'
   end    
 

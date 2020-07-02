@@ -1,9 +1,11 @@
-ALL PERFORMANCES
+<h1>ALL PERFORMANCES</h1>
+<br>
 <% @performances.each do |performance| %>
   <h4><a href="/performances/<%= performance.id %>"></a></h4>
-  <strong><%= performance.song %></strong>
-  <p><%= performance.artist %></p>
-  <p>Genre: <%= performance.genre %></p>
-  <p>Performaed By OpenMicWorld User: <%= performance.user.name %></p>
-  <br><br>
+  <p>Song Name:<strong><%= performance.song %></strong>  &emsp;&emsp; Song Writer: <%= performance.artist %> &emsp;&emsp; Genre: <%= performance.genre %></p>
+  <p><strong><%= performance.user.name %></strong> is the OpenMicWorld member who will be performing this song.</p>
+  <br>
+  <br>
+  <p>*******************************************************************************</p>
+  <br>
 <% end %>
