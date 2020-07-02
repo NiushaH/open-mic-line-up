@@ -1,12 +1,13 @@
 <h2> Welcome, <%= current_user.name %> to Your Account Page</h2>
 <h3>Cell Phone that accepts text messages: </h3>
-<h4><%= @user.cellphone %></h4>
+<h4><%= current_user.cellphone %></h4>
 
-<h3> And, here are all your performances </h3>
+<h3> And, here are all your OpenMicWorld registered performances </h3>
     <% @performances.each do |performance| %>
+    <h4> <a href="/performances/<%= performance.id %>"><%= performance.created_at %></a></h4>
     <div>
-        <%= performance.song %>
-        <%= performance.artist %>
-        <%= performance.genre %>
+        <p><strong>Song: <%= performance.song %></strong></p>
+        <p> Artist: <%= performance.artist %></p>
+        <p> Genre: <%= performance.genre %></p>
     </div>
     <% end %>
