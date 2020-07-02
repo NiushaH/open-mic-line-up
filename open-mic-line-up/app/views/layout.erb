@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="nav">
-      <h4><a href="index">OpenMicWorld Homepage</a> <a href="performances/new">Register a New Performance</a> <a href="users/show">See My Performances & Account</a> <a href="users/logout">Logout</a> </h4>
-    </div>
-    
+<%# FIX THE FOLLOWING DIV SO IT CAN NAVIGATE TO URL WITHOUT STAYING IN THE CURRENT VIEWS FOLDER %>
+    <%# <div class="nav"> %>
+      <%# <h4><a href="index">OpenMicWorld Homepage</a> <a href="performances/new">Register a New Performance</a> <a href="users/show">See My Performances & Account</a> <a href="users/logout">Logout</a> </h4> %>
+    <%# </div> %>
+
     <div class="wrapper">
 
         <%= yield %>
