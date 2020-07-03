@@ -57,6 +57,9 @@ class PerformancesController < ApplicationController
       end
     end
 
+    get '/performances/:id' do
+      @performance = Performance.find_by(params[:id])
+      erb :'performances/show'
+    end
 
-
-end
+  end

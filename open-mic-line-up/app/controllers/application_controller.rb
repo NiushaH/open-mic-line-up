@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    @performances = Performance.all
     erb :index
   end
 
