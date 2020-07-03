@@ -1,9 +1,11 @@
-<h2> Welcome, <%= current_user.name %> to Your Account Page</h2>
-<h3>Cell Phone that accepts text messages: </h3>
-<h4><%= current_user.cellphone %></h4>
+<h2>Welcome to your account page, <%= current_user.name %>.</h2>
+<h3>Currently we have this cell phone that accepts text messages on file: <%= current_user.cellphone %></h3>
 
-<h3> And, here are all your OpenMicWorld registered performances </h3>
-
+<h3> Below are all your OpenMicWorld registered performances: </h3>
+<%# # FIX THIS LINE %>
+      <%# <% @performances.select{|k,v| user_id["user.id"] == @current_user.id} do |performance| %> %>
+        <%# <p><strong><%= performance.song %></strong> by <%= performance.artist %> </p> %>
+      <%# <% end %> %>
 
 <div class="nav">
       <a href="/logout">Logout</a> </h4>
