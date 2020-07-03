@@ -40,20 +40,20 @@ class PerformancesController < ApplicationController
     end
 
     post '/performances/performances' do
-      if logged_in?
-        if params[:song] == ""
-          #  || params[:artist] == "" || params[:genre] == ""
-          redirect to "/performances/new"
-        else
-          @performance = current_user.performances.build(song: params[:song], artist: params[:artist], genre: params[:genre])
+      if !logged_in?
+        redirect to '/users/login'
+      else
+        # using != because !!"" <-- of an empty string is truthy in Ruby
+        if params[:song] != "" || params[:artist] != "" || params[:genre] != ""
+          @performance = Performances.build(song: params[:song], artist: params[:artist], genre: params[:genre], user_id: current_user.id)
           if @performance.save
             redirect to "/performances/#{@performance.id}"
           else
             redirect to "/performances/new"
           end
-        end
-      else
-        redirect to '/users/login'
+        else
+          redirect to "/performances/new"
+        end      
       end
     end
 
