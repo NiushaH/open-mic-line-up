@@ -4,7 +4,8 @@
       <h1><p>Hi, welcome to OpenMicWorld!</p></h1>
     <%end %>
 
-    <h2>OpenMicWorld is where you can support your favorite local artist, here are the songs coming soon to an Open Mic Night stage near you</h2>
+    <h2>OpenMicWorld is where you can support your favorite local artists or find your stage.
+    Here are the songs coming soon to an Open Mic Night stage near you soon!</h2>
       <% @performances.each do |performance| %>
         <h4><a href="/performances/<%= performance.id %>"></a></h4>
         <p><strong><%= performance.song %></strong> by <%= performance.artist %> </p>
