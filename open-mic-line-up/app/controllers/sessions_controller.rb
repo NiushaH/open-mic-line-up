@@ -62,7 +62,7 @@ class SessionsController < ApplicationController
 # user SHOW route where user registers for performances
 # the dynamic URL identifier gets stored in the params hash key along with the argument passed in as its value
   get '/users/:id' do
-    # @performances = Performance.all
+    @performances = Performance.all
     @user = User.find_by(id: params[:id])
 binding.pry
     redirect_if_not_logged_in

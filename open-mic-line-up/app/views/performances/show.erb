@@ -1,20 +1,9 @@
+<h1> Here's a song you're registered to sing</h1>
+<h2></h2>
+<p>Song title is <strong><%= @performance.song %></strong> written by <%= @performance.artist %></p>
+<p>Music Genre: <%= @performance.genre %></p>
+
+<p style="text-align:right">Name of OpenMicWorld User is <strong><%= current_user.name %></strong></p>
 
 
-<h3><%= @performance.song %></h3>
-<p><%= @performance.artist %></p>
-<p>Mood: <%= @performance.genre %></p>
-
-<p>Created by: <%= @performance.user.name %></p>
-
-<%# <p>created on <%= @performance.formatted_created_at %></p>
-
-
-<%# <% if authorized_to_edit?(@performance) %> %>
-  <%# <a href="/performances/<%= @performance.id %>/edit">Edit Entry</a> %>
-  <%# <br><br> %>
-  <%# <form class="" action="/performances/<%= @performance.id %>" method="post"> %>
-    <!-- How do I turn this form submission into a DELETE request??? -->
-    <%# <input type="hidden" name="_method" value="DELETE"> %>
-    <%# <input type="submit" name="" value="Delete this Entry"> %>
-  <%# </form> %>
-<%# <% end %> %> %>
+<%# ADD LINK TO EDIT PERFORMANCES HERE %>

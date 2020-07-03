@@ -16,7 +16,8 @@ class PerformancesController < ApplicationController
 
     # post new song to register a new performance
     post '/performances/new' do
-    
+      @performances = Performance.all
+      erb :'performances/performances'
     end
 
     # show route for a performance
@@ -40,6 +41,7 @@ class PerformancesController < ApplicationController
     end
 
     post '/performances/performances' do
+      @performances = Performance.all
       if !logged_in?
         redirect to '/users/login'
       else
