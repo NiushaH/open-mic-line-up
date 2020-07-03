@@ -1,15 +1,7 @@
-    <% if logged_in? %>
-      
+    <% if logged_in? %>    
       <h1><p>Hi <%=current_user.name %>, welcome to OpenMicWorld!</p></h1>
-
     <% else %>
       <h1><p>Hi, welcome to OpenMicWorld!</p></h1>
-      <h3>Please login to register for a performance.</h3>
-      <a class="button" href="/users/login">Log In</a>
-      <br>
-      <br>
-      <h3>Need an account?  Sign Up here:</h3>
-      <a class="button" href="/users/signup">Create an OpenMicWorld Account</a>
     <%end %>
 
     <h2>OpenMicWorld is where you can support your favorite local artist, here are the songs coming soon to an Open Mic Night stage near you</h2>
@@ -17,11 +9,18 @@
         <h4><a href="/performances/<%= performance.id %>"></a></h4>
         <p><strong><%= performance.song %></strong> by <%= performance.artist %> </p>
         <% end %>
+
     <% if logged_in? %>
       <a href="/performances/new"> If you're ready to sign up to perform at an open mic night, click here.</a>
       <br>
       <br>
       <a class="button" href="logout"> Log Out </a>
-      
     <% else %>
-    <% end %>
+    <h2></h2>
+      <h3>Ready to perform soon?  Please login to sign up for an upcoming open mic night.</h3>
+      <a class="button" href="/users/login">Log In</a>
+      <br>
+      <br>
+      <h3>Need an account?  Sign Up here:</h3>
+      <a class="button" href="/users/signup">Create an OpenMicWorld Account</a>
+    <%end %>
