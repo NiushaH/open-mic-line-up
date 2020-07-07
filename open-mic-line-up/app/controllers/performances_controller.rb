@@ -5,17 +5,26 @@ class PerformancesController < ApplicationController
     erb :'performances/index'
   end    
 
+  get '/performances/index' do
+    if logged_in?
+      @performances = Performance.all
+      erb :'performances/index'
+    else
+      redirect to '/login'
+    end
+  end    
+
   # render a form to register a new performance
     get '/performances/new' do
-      # if logged_in? == true allow user to add/register new performance
+      if logged_in? == true
         erb :'performances/new'
-
-      # else ask user to login or signup
-      
+      else ask user to login or signup
+        erb :'/'
+      end
     end
 
     # post new song to register a new performance
-    post '/performances/new' do
+    post '/performances' do
       @performances = Performance.all
       erb :'performances/performances'
     end
@@ -29,21 +38,10 @@ class PerformancesController < ApplicationController
     
     end
 
-
-    # index route for all performances
-    get '/performances/performances' do
-      if logged_in?
-        @performances = Performance.all
-        erb :'performances/performances'
-      else
-        redirect to '/users/login'
-      end
-    end
-
-    post '/performances/performances' do
+    post '/performances/index' do
       @performances = Performance.all
       if !logged_in?
-        redirect to '/users/login'
+        redirect to '/login'
       else
         # using != because !!"" <-- of an empty string is truthy in Ruby
         if params[:song] != "" || params[:artist] != "" || params[:genre] != ""

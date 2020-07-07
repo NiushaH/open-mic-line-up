@@ -10,18 +10,3 @@
         <h4><a href="/performances/<%= performance.id %>"></a></h4>
         <p><strong><%= performance.song %></strong> by <%= performance.artist %> </p>
         <% end %>
-
-    <% if logged_in? %>
-      <a href="/performances/new"> If you're ready to sign up to perform at an open mic night, click here.</a>
-      <br>
-      <br>
-      <a class="button" href="logout"> Log Out </a>
-    <% else %>
-    <h2></h2>
-      <h3>Ready to perform soon?  Please login to sign up for an upcoming open mic night.</h3>
-      <a class="button" href="/users/login">Log In</a>
-      <br>
-      <br>
-      <h3>Need an account?</h3>
-      <a class="button" href="/users/signup">Sign Up Here</a>
-    <%end %>

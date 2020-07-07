@@ -1,11 +1,6 @@
-<h1>ALL PERFORMANCES</h1>
+<h1><p> Hi, <%= current_user.name %></h1>
+<h2> Here are all open OpenMicWorld's users' upcoming performances:</h2>
 <br>
-<% @performances.each do |performance| %>
-  <h4><a href="/performances/<%= performance.id %>"></a></h4>
-  <p>Song Name:<strong><%= performance.song %></strong>  &emsp;&emsp; Song Writer: <%= performance.artist %> &emsp;&emsp; Genre: <%= performance.genre %></p>
-  <p><strong><%= performance.user.name %></strong> is the OpenMicWorld member who will be performing this song.</p>
-  <br>
-  <br>
-  <p>*******************************************************************************</p>
-  <br>
-<% end %>
+<h2>Iterate over all performances and show the OpenMicWorld username and the title of the song, song writer, and genre.</h2>
+
+  <%# @performances.each do |find_user_songs| %>

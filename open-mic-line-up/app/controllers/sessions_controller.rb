@@ -1,39 +1,37 @@
 class SessionsController < ApplicationController
 
 # routes and views to render login form to user
-  get '/users/login' do
-    # redirect_if_logged_in
-    erb :'users/login'
-  end
+get '/login' do
+  # redirect_if_logged_in
+  erb :'users/login'
+end
 
 # this route's purpose is to receive the login form
 # find the user, and login the user (create a session)
-  post '/users/login' do
-# binding.pry
-    # Find the user
-    @user = User.find_by(cellphone: params[:cellphone])
-    # Authenticate the user   [WHY DOESN'T PARAMS USE PASSWORD_DIGEST]
-    # Login the user
-    # Redirect to the user's landing page
-    if @user.authenticate(params[:password])
-      # if truthy value, login the user and create their session
+# Authenticate the user // WHY DOESN'T PARAMS on line 16 USE PASSWORD_DIGEST??
+# Login the user
+# Redirect to the user's landing page
+    # if line 18 returns truthy value, login the user and create their session
 # Q&A - why not build a method for begin a session??? and call here as well as for lines 44, 45, & 53??
-      session[:user_id] = @user.id
-      puts session
-      redirect "/users/#{@user.id}"
-    else
-      #tell user they entered invalid credentials      
-      redirect '/users/login'
-    end
+#tell user they entered invalid credentials
+post '/login' do
+  @user = User.find_by(cellphone: params[:cellphone])
+  if @user.authenticate(params[:password])
+    session[:user_id] = @user.id
+    puts session
+    redirect "/users/#{@user.id}"
+  else
+    redirect '/login'
   end
+end
 
 # routes and views to allow user to signup for Open Mic World
 # render the signup form, save user credentials in db
-  get '/users/signup' do
+  get '/signup' do
     erb :'users/signup'
   end
 
-  post '/users/signup' do
+  post '/signup' do
     # create new user and persist the new user to the database via params
     # incorporate condition that value user enters != nil and/or custom validator
     if params[:name] != "" && params[:cellphone] != "" && params[:password] != ""
@@ -54,26 +52,21 @@ class SessionsController < ApplicationController
     else
     # not valid input
     # add message to tell user what is wrong
-    redirect '/users/signup'
+    redirect '/signup'
     end
   end
 
-
-# user SHOW route where user registers for performances
-# the dynamic URL identifier gets stored in the params hash key along with the argument passed in as its value
+  # user SHOW route where user registers for performances
+  # the dynamic URL identifier gets stored in the params hash key along with the argument passed in as its value
+  # redirect_if_not_logged_in
   get '/users/:id' do
-    @performances = Performance.all
     @user = User.find_by(id: params[:id])
-binding.pry
-    redirect_if_not_logged_in
     erb :'/users/show'
-
   end
 
-#   post '/users/:id' do
-#     erb :'users/__???__'
-#   end
-
+  #   post '/users/:id' do
+  #     erb :'users/__???__'
+  #   end
 
 
 # DELETE USER.ID == 6 for practice -- duplicate entry
