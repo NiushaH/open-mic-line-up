@@ -26,7 +26,7 @@ class PerformancesController < ApplicationController
     # post new song to register a new performance
     post '/performances' do
       @performances = Performance.all
-      erb :'performances/performances'
+      erb :'performances/index'
     end
 
     # show route for a performance
