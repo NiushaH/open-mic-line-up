@@ -4,9 +4,10 @@
   <label for="name">Song:</label>
   <input type="text" name="song">
   <label for="name">Artist:</label>
-  <input type="text" name="content">
+  <input type="text" name="artist">
   <label for="name">Genre:</label>
   <input type="text" name="genre">
-
+  <%# automatically enter current_user.id as performance.user_id number %>
+  <input type="hidden" name="user_id" value=<%= current_user.id%>>
   <input type="submit" name="" value="Register Song to Sing for Open Mic Night">
 </form>

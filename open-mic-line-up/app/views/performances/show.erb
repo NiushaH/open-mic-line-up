@@ -1,17 +1,15 @@
-<h1>Here's a song you, <strong><%= current_user.name %></strong>, are registered to sing</h1>
-<h2></h2>
-<p>Song title is <strong><%= @performance.song %></strong> written by <%= @performance.artist %></p>
-<p>Music Genre: <%= @performance.genre %></p>
-<p>created on <%= @performance.formatted_created_at %></p>
+<h2><strong><%= current_user.name %></strong>, you are now registered to sing:</h2>
+<h1><p><strong><%= @performance.song %></strong> written by <%= @performance.artist %></p>
+<p>Music Genre: <%= @performance.genre %></p></h1>
 
-
-<%# ADD LINK TO EDIT PERFORMANCES HERE %>
 <% if authorized_to_edit?(@performance) %>
-  <a href="/performance/<%= @performance.id %>/edit">Edit Song Entry</a>
-  <br><br>
-  <form class="" action="/performance/<%= @performance.id %>" method="post">
-    <!-- How do I turn this form submission into a DELETE request??? -->
+  <h3>Want to change something in your song registration?</h3>
+  <a class="button" href="/performances/<%= @performance.id%>/edit">Edit this Song Registration</a>
+  <br>
+  <br>
+  <form class="" action="/performances/<%= @performance.id %>" method="post">
+    <h3>Or, want to delete this entry?</h3>
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" name="" value="Delete this Entry">
+    <input type="submit" name="" value="Delete this Song Registration"></a>
   </form>
 <% end %>

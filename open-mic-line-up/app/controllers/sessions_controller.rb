@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 # routes and views to render login form to user
 get '/login' do
-  # redirect_if_logged_in
+  redirect_if_logged_in
   erb :'users/login'
 end
 

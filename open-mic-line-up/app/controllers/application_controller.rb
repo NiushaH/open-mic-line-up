@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def authorized_to_edit?(performance)
-      performance.user == current_user
+      performance.user_id == current_user.id
     end
 
   
@@ -38,7 +38,7 @@ class ApplicationController < Sinatra::Base
       end
     end
 
-    # use this helper method to avoid showing welcome, login, or signup page to a user that's already logged in
+    # use this helper method to avoid showing login or signup page to a user that's already logged in
     def redirect_if_logged_in
       if logged_in?
         redirect "/users/#{current_user.id}"

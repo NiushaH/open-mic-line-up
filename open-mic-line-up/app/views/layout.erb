@@ -16,7 +16,8 @@
   <body>
     <div class="nav">
     <% if logged_in? %>
-      <h4><a href="/">OpenMicWorld Homepage</a> &emsp; <a href="/performances/new">Register a New Performance</a> &emsp; <a href="/users/show">See My Performances & Account</a>  </h4>
+      <% current_user %>
+      <h4><a href="/">OpenMicWorld Homepage</a> &emsp; <a href="/performances/new">Register a New Performance</a> &emsp; <a href="/users/<%= @current_user.id %>">See My Performances & Account</a>  </h4>
     <% else %>
       <h4><a href="/">OpenMicWorld Homepage</a> &emsp; <a href="/login">Log into OpenMicWorld</a> &emsp; <a href="/signup">Signup for OpenMicWorld</a> </h4>
     <%end %>
@@ -43,7 +44,7 @@
       </div>
 
       <footer class="branding">
-        <small>&copy; 2020 <strong><a class="button" href="/" style="color:black;text-decoration: none">OpenMicWorld</a></strong></small>
+        <small>&copy; 2020 <strong><a class="button" href="/" style="color:black;text-decoration: none">OpenMicWorldApp</a></strong></small>
       </footer>
     </div>
 
