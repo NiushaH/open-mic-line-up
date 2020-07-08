@@ -1,13 +1,10 @@
-<% if @performance.user_id == current_user %>
-<h2><strong><%= current_user.name %></strong>, you are now registered to sing:</h2>
+<% if @performance.user_id == current_user.id %>
+<h2><strong><%= current_user.name %></strong>, you are registered to sing:</h2>
 <% else %>
-<h2><strong><%= current_user.name %></strong>, here is a song 
-<% @name = User.find_by(id: @performance[:user_id]) %>
-<%= @name.name %> registered to sing at an Open Mic Night soon!</h2>
+<h2><strong><%= current_user.name %></strong>, here is a song OpenMicWorld user <% @name = User.find_by(id: @performance[:user_id]) %><%= @name.name %> registered to sing at an Open Mic Night soon!</h2>
 <% end %>
 
-<h1><p><strong><%= @performance.song %></strong> written by <%= @performance.artist %></p>
-<p>Music Genre: <%= @performance.genre %></p></h1>
+<h1><p><strong><%= @performance.song %></strong>, a <%= @performance.genre.downcase %> song, written by <%= @performance.artist %></p></h1>
 
 <% if authorized_to_edit?(@performance) %>
   <h3>Want to change something in your song registration?</h3>

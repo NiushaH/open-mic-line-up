@@ -21,6 +21,7 @@ post '/login' do
     puts session
     redirect "/users/#{@user.id}"
   else
+    flash[:errors] = "Please try your credentials again, perhaps there was a typo."
     redirect '/login'
   end
 end

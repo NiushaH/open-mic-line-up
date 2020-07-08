@@ -97,7 +97,7 @@ class PerformancesController < ApplicationController
       flash[:message] = "Successfully deleted that entry."
     # need else?
     end
-    redirect '/performances'
+    redirect "/users/#{current_user.id}"
   end
 
 end
