@@ -1,9 +1,15 @@
 <h1>Welcome to your account page, <%= current_user.name %>.</h1>
-<h3>Currently we have this cell phone that accepts text messages on file: <%= current_user.cellphone %></h3>
+<h4>Currently we have this cell phone that accepts text messages on file: <%= current_user.cellphone %></h4>
+<br>
+<br>
+<h2> Below are all your OpenMicWorld registered performance songs: </h2>
 
-<h2> Below are all your OpenMicWorld registered performances: </h2>
-
-<h3> Check out the cool Ruby code that:
-  <ul>* iterates over all performances and</ul>
-  <ul>* displays the current user's song repertoire with hyperlinks to each song's particular show page</ul>
-</h3>
+<p>
+  <ol type="1">
+    <% @performances.each do |performance| %>
+      <% if performance.user_id == @user.id %>
+        <li><a href="/performances/<%= performance.id %>"><strong><%= performance.song %></strong> by <%= performance.artist %> </a></li>
+      <% end %>
+    <% end %>
+  </ol>
+</p>

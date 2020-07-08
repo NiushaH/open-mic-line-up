@@ -1,1 +1,21 @@
-<h1><p>Edit this song</p></h1>
+<h2><strong><%= current_user.name %></strong>, you are may edit the following song's details as you wish below:</h2>
+    <% @performances.each do |performance| %>
+      <% if performance.id == @performance.id %>
+         <h3><p><%= @performance.song %> written by <%= @performance.artist %></p>
+             <p>Music Genre: <%= @performance.genre %></p></h3>
+      <% end %>
+    <% end %>
+
+<h2></h2>
+<h2>Enter details you wish to update below </h2>
+
+<form class="" action="/performances" method="post">
+  <label for="name">Song Title:</label>
+  <input type="text" name="song">
+  <label for="name">Artist:</label>
+  <input type="text" name="artist">
+  <label for="name">Genre:</label>
+  <input type="text" name="genre">
+  <%# performance.user_id value cannot be edited %>
+  <input type="submit" name="" value="Edit Details About This Song">
+</form>

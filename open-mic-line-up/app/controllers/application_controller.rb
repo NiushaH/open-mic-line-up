@@ -44,5 +44,13 @@ class ApplicationController < Sinatra::Base
         redirect "/users/#{current_user.id}"
       end
     end
+
+    def access_all_songs
+      @performances = Performance.all
+    end
+  
+    def set_performance_song
+      @performance = Performance.find(params[:id])
+    end
   end 
 end

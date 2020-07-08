@@ -61,6 +61,7 @@ end
   # redirect_if_not_logged_in
   get '/users/:id' do
     @user = User.find_by(id: params[:id])
+    access_all_songs
     erb :'/users/show'
   end
 

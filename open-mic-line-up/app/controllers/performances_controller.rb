@@ -56,6 +56,7 @@ class PerformancesController < ApplicationController
 
   get '/performances/:id/edit' do
     redirect_if_not_logged_in
+    access_all_songs
     set_performance_song
     if authorized_to_edit?(@performance)
       erb :'/performances/edit'
@@ -66,6 +67,7 @@ class PerformancesController < ApplicationController
 
   patch 'performances/:id' do 
     redirect_if_not_logged_in
+    @user = User.find_by(id: params[:id])
     set_performance_song
     if @performance.user == current_user && params[:song] != ""
       @performance.update(song: params[:song])
@@ -86,16 +88,6 @@ class PerformancesController < ApplicationController
     # need else?
     end
     redirect '/performances'
-  end
-
-
-  private
-  def access_all_songs
-    @performances = Performance.all
-  end
-
-  def set_performance_song
-    @performance = Performance.find(params[:id])
   end
 
 end
