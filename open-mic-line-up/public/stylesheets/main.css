@@ -13,6 +13,9 @@
 
   /* --- Welcome Page Styles --- */
   body {
+    background: rgba(0, 128, 0, 0.3);
+    background-image: url("/public/images/microphone.jpg");
+    background-repeat: no-repeat, repeat;
     background-color: lightblue;
     color: #333;
     font-family: Sans-Serif;
@@ -114,17 +117,40 @@
   }
 }
 
-  /* WHY DOESN'T THIS CSS FOR NUMBERED LIST WORK ON USERS/SHOW PAGE??? */
-
+/* WHY DOESN'T THIS CSS FOR NUMBERED LIST WORK ON USERS/SHOW PAGE??? */
   ol li {
     list-style-type: decimal;
     list-style-position: inside;
   }
 
-
 /* ADD A BUTTON CLASS */
 
+
 /* ADD A NAV CLASS */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
 
 
 /* ADD A FLASH CLASS */

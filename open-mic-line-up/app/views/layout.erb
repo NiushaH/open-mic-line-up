@@ -17,9 +17,17 @@
     <div class="nav">
     <% if logged_in? %>
       <% current_user %>
-      <h4><a href="/">OpenMicWorld Homepage</a> &emsp; <a href="/performances/new">Register a New Performance</a> &emsp; <a href="/users/<%= @current_user.id %>">See My Performances & Account</a>  </h4>
+      <h4>
+        <ul>
+          <li><a href="/" >OpenMicWorld Homepage</a> &emsp; <a href="/performances/new">Register a New Performance</a> &emsp; <a href="/users/<%= @current_user.id %>">See My Performances & Account</a> </li> 
+        </ul>
+      </h4>
     <% else %>
-      <h4><a href="/">OpenMicWorld Homepage</a> &emsp; <a href="/login">Log into OpenMicWorld</a> &emsp; <a href="/signup">Signup for OpenMicWorld</a> </h4>
+      <h4>
+        <ul>
+          <li><a href="/">OpenMicWorld Homepage</a> &emsp; <a href="/login">Log into OpenMicWorld</a> &emsp; <a href="/signup">Signup for OpenMicWorld</a> </li> 
+        </ul>
+      </h4>
     <%end %>
     </div>
 
