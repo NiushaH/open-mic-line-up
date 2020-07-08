@@ -7,15 +7,17 @@
     <% end %>
 
 <h2></h2>
-<h2>Enter details you wish to update below </h2>
+<h2>Replace the details you wish to edit/update below </h2>
 
-<form class="" action="/performances" method="post">
+<form class="" action="/performances/<%= @performance.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <label for="name">Song Title:</label>
-  <input type="text" name="song">
+  <input type="text" name="song" placeholder="<%= @performance.song%>">
   <label for="name">Artist:</label>
-  <input type="text" name="artist">
+  <input type="text" name="artist" placeholder="<%= @performance.artist%>">
   <label for="name">Genre:</label>
-  <input type="text" name="genre">
+  <input type="text" name="genre" placeholder="<%= @performance.genre%>">
   <%# performance.user_id value cannot be edited %>
-  <input type="submit" name="" value="Edit Details About This Song">
+  <br>
+  <input type="submit" name="" value="Edit Only the Details I Changed">
 </form>

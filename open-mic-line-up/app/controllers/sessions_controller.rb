@@ -16,7 +16,7 @@ end
 #tell user they entered invalid credentials
 post '/login' do
   @user = User.find_by(cellphone: params[:cellphone])
-  if @user.authenticate(params[:password])
+  if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
     puts session
     redirect "/users/#{@user.id}"

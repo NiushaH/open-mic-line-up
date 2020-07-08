@@ -1,12 +1,10 @@
 # Here is where I create some seed data to work with and performance associations
 
-
-
 # Create 3 users
 
-madonna = User.create(name: "Madonna", cellphone: "2025551212", password: "password1234")
-tracy =  User.create(name: "Tracy Chapman", cellphone: "2125551212", password: "password1234")
-taylor =  User.create(name: "Taylor Swift", cellphone: "6155551212", password: "password1234")
+madonna = User.create(name: "Madonna", cellphone: "2025551212", password: "pw")
+tracy =  User.create(name: "Tracy Chapman", cellphone: "2125551212", password: "pw")
+taylor =  User.create(name: "Taylor Swift", cellphone: "6155551212", password: "pw")
 
 
 # Create some performances

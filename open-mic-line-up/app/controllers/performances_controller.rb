@@ -65,18 +65,28 @@ class PerformancesController < ApplicationController
     end
   end
 
-  patch 'performances/:id' do 
+  patch '/performances/:id' do 
     redirect_if_not_logged_in
-    @user = User.find_by(id: params[:id])
+    access_all_songs
     set_performance_song
-    if @performance.user == current_user && params[:song] != ""
-      @performance.update(song: params[:song])
-    elsif @performance.user == current_user && params[:artist] != ""
-      @performance.update(artist: params[:artist])
-    elsif @performance.user == current_user && params[:genre] != ""
-      @performance.update(genre: params[:genre])
+    if params[:song] != "" || params[:artist] != "" || params[:genre] != ""
+      if params[:song].empty? == true 
+      else params[:song].empty? == false && @performance.user == current_user
+        @performance.update(song: params[:song])
+      end
+
+      if params[:artist].empty? == true 
+      else params[:artist].empty? == false && @performance.user == current_user
+        @performance.update(artist: params[:artist])
+      end
+
+      if params[:genre].empty? == true 
+      else params[:genre].empty? == false && @performance.user == current_user
+        @performance.update(genre: params[:genre])
+      end
+      redirect "/performances/#{@performance.id}"
     else
-      redirect "users/#{current_user.id}"
+      redirect "/users/#{current_user.id}"
     end
   end
 

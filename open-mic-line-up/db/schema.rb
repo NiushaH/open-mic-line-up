@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200630235201) do
+ActiveRecord::Schema.define(version: 20200708060225) do
 
   create_table "performances", force: :cascade do |t|
     t.string   "song"
