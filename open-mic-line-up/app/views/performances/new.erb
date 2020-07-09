@@ -1,15 +1,16 @@
-<h2>Register for a new performance: </h2>
+<h2>Register a song to perform </h2>
 
 <form class="" action="/performances" method="post">
   <label for="name">Song:</label>
-  <input type="text" name="song">
+  <input type="text" name="song"><br>
   <label for="name">Artist:</label>
-  <input type="text" name="artist">
+  <input type="text" name="artist"><br>
   <label for="name">Genre:</label>
-  <input type="text" name="genre">
+  <input type="text" name="genre"><br>
   <%# automatically enter current_user.id as performance.user_id number %>
   <input type="hidden" name="user_id" value=<%= current_user.id%>>
   <br>
   <br>
   <input class="button" type="submit" name="" value="Register Song to Sing for Open Mic Night">
 </form>
+<br><br><br>

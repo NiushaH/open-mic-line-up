@@ -182,6 +182,20 @@
     position:relative;
     top:1px;
   } 
+
+  .errors {
+    border-color: white;
+    color: yellow;
+    font-size:26px;
+    text-align: center;
+  }
+
+  .message {
+    border-color: white;
+    color: yellow;
+    font-size:26px;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 600px) {
