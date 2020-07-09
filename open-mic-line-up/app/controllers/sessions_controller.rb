@@ -1,33 +1,33 @@
 class SessionsController < ApplicationController
 
-# routes and views to render login form to user
-get '/login' do
-  redirect_if_logged_in
-  erb :'users/login'
-end
-
-# this route's purpose is to receive the login form
-# find the user, and login the user (create a session)
-# Authenticate the user // WHY DOESN'T PARAMS on line 16 USE PASSWORD_DIGEST??
-# Login the user
-# Redirect to the user's landing page
-    # if line 18 returns truthy value, login the user and create their session
-# Q&A - why not build a method for begin a session??? and call here as well as for lines 44, 45, & 53??
-#tell user they entered invalid credentials
-post '/login' do
-  @user = User.find_by(cellphone: params[:cellphone])
-  if @user && @user.authenticate(params[:password])
-    session[:user_id] = @user.id
-    puts session
-    redirect "/users/#{@user.id}"
-  else
-    flash[:errors] = "Please try your credentials again, perhaps there was a typo."
-    redirect '/login'
+  # routes and views to render login form to user
+  get '/login' do
+    redirect_if_logged_in
+    erb :'users/login'
   end
-end
 
-# routes and views to allow user to signup for Open Mic World
-# render the signup form, save user credentials in db
+  # this route's purpose is to receive the login form
+  # find the user, and login the user (create a session)
+  # Authenticate the user // WHY DOESN'T PARAMS on line 16 USE PASSWORD_DIGEST??
+  # Login the user
+  # Redirect to the user's landing page
+      # if line 18 returns truthy value, login the user and create their session
+  # Q&A - why not build a method for begin a session??? and call here as well as for lines 44, 45, & 53??
+  #tell user they entered invalid credentials
+  post '/login' do
+    @user = User.find_by(cellphone: params[:cellphone])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      puts session
+      redirect "/users/#{@user.id}"
+    else
+      flash[:errors] = "Please try your credentials again, perhaps there was a typo."
+      redirect '/login'
+    end
+  end
+
+  # routes and views to allow user to signup for Open Mic World
+  # render the signup form, save user credentials in db
   get '/signup' do
     erb :'users/signup'
   end
@@ -61,6 +61,7 @@ end
   # the dynamic URL identifier gets stored in the params hash key along with the argument passed in as its value
   # redirect_if_not_logged_in
   get '/users/:id' do
+    redirect_if_not_logged_in
     @user = User.find_by(id: params[:id])
     access_all_songs
     erb :'/users/show'
@@ -70,8 +71,7 @@ end
   #     erb :'users/__???__'
   #   end
 
-
-# DELETE USER.ID == 6 for practice -- duplicate entry
+  # DELETE USER.ID == 6 for practice -- duplicate entry
 
 
   get '/logout' do

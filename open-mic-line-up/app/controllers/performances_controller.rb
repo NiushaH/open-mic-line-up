@@ -1,6 +1,7 @@
 class PerformancesController < ApplicationController
 
   get '/performances' do
+    redirect_if_not_logged_in
     access_all_songs
     erb :'performances/index'
   end    
@@ -95,8 +96,7 @@ class PerformancesController < ApplicationController
     set_performance_song
     if authorized_to_edit?(@performance)
       @performance.destroy
-      flash[:message] = "Successfully deleted that entry."
-    # need else?
+      flash[:message] = "That song was wuccessfully deleted."
     end
     redirect "/users/#{current_user.id}"
   end
