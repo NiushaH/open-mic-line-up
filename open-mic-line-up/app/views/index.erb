@@ -1,12 +1,15 @@
     <% if logged_in? %>    
-      <h1><p>Hi <%=current_user.name %>, welcome to OpenMicWorld!</p></h1>
+      <h1>Hi <%=current_user.name %>, welcome to OpenMicWorld!</h1>
     <% else %>
-      <h1><p>Hi, welcome to OpenMicWorld!</p></h1>
+      <h1>Welcome to OpenMicWorld!</h1>
     <%end %>
 
-    <h2>OpenMicWorld is where you can support your favorite local artists or find your stage.
-    Here are the songs coming soon to an Open Mic Night stage near you soon!</h2>
+    <h2>A place where you can support your favorite local artists, connect with your audience and/or find your stage.
+    <br>
+    <br>
+    Here are all the songs OpenMicWorld members are going to perform soon at an Open Mic Night stage near you!</h2>
+  <div id="homepage" style="padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 350px">
       <% @performances.each do |performance| %>
-        <h4><a href="/performances/<%= performance.id %>"></a></h4>
-        <p><strong><%= performance.song %></strong> by <%= performance.artist %> </p>
+        <p><a href="/performances/<%= performance.id%>"><strong><%= performance.song %></strong> by <%= performance.artist %></a></p>
         <% end %>
+  </div>

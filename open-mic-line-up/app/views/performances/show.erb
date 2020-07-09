@@ -1,11 +1,14 @@
 <% if @performance.user_id == current_user.id %>
-<h2><strong><%= current_user.name %></strong>, you are registered to sing:</h2>
+<h1><strong><%= current_user.name %></strong>, you have registered to perform <%= @performance.song %></strong>, a <%= @performance.genre.downcase %> song, written by <%= @performance.artist %>.</h1>
+<br>
 <% else %>
-<h2><strong><%= current_user.name %></strong>, here is a song OpenMicWorld user <% @name = User.find_by(id: @performance[:user_id]) %><%= @name.name %> registered to sing at an Open Mic Night soon!</h2>
+<h1><strong><%= current_user.name %></strong>, here is a song OpenMicWorld user <% @name = User.find_by(id: @performance[:user_id]) %><%= @name.name %> registered to perform at an Open Mic Night soon!
+<br><br>
+<%= @performance.song %></strong>, a <%= @performance.genre.downcase %> song, written by <%= @performance.artist %>.</h1>
 <% end %>
-
-<h1><p><strong><%= @performance.song %></strong>, a <%= @performance.genre.downcase %> song, written by <%= @performance.artist %></p></h1>
-
+<br>
+<br>
+<br>
 <% if authorized_to_edit?(@performance) %>
   <h3>Want to change something in your song registration?</h3>
   <a class="button" href="/performances/<%= @performance.id%>/edit">Edit this Song Registration</a>
@@ -14,6 +17,9 @@
   <form class="" action="/performances/<%= @performance.id %>" method="post">
     <h3>Or, want to delete this entry?</h3>
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" name="" value="Delete this Song Registration"></a>
+    <input class="button" type="submit" name="" value="Delete this Song Registration"></a>
   </form>
 <% end %>
+<br>
+<a class="button" href="/"> See All Songs Registered on OpenMicWorld </a>
+<br><br><br>

@@ -30,6 +30,7 @@ class PerformancesController < ApplicationController
 
   # show route for a performance
   get '/performances/:id' do
+    redirect_if_not_logged_in
     set_performance_song
     erb :'performances/show'
   end

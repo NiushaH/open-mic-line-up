@@ -1,15 +1,16 @@
 <h1>Welcome to your account page, <%= current_user.name %>.</h1>
-<h4>Currently we have this cell phone that accepts text messages on file: <%= current_user.cellphone %></h4>
+<br>
+<h2>Currently we have <%= current_user.cellphone %> as your cell phone that accepts text messages.</h2>
 <br>
 <br>
-<h2> Below are all your OpenMicWorld registered performance songs.  Click one to view its details. </h2>
-
-<p>
-  <ol type="1">
-    <% @performances.each do |performance| %>
-      <% if performance.user_id == @user.id %>
-        <li><a href="/performances/<%= performance.id %>"><strong><%= performance.song %></strong> by <%= performance.artist %> </a></li>
-      <% end %>
+<div id="performer-page"  style="padding-top: 20px; padding-right: 375px; padding-bottom: 20px; padding-left: 150px">
+  <h2> Below are all the songs you've registered on OpenMicWorld to perform.  Click one to view its details. </h2>
+  <% @performances.each do |performance| %>
+    <% if performance.user_id == @user.id %>
+      <li class="performer-songs" style="color:black;"><a class="performer-songs" href="/performances/<%= performance.id %>"><strong><%= performance.song %></strong> by <%= performance.artist %> </a></li>
+    <% elsif performance.user_id == nil %>
+      <h2> Ready to try register a song to perform?  Click the "Register for a New Performance" button above. </h2>
     <% end %>
-  </ol>
-</p>
+  <% end %>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>

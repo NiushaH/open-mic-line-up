@@ -1,23 +1,26 @@
-<h2><strong><%= current_user.name %></strong>, you are may edit the following song's details as you wish below:</h2>
-    <% @performances.each do |performance| %>
-      <% if performance.id == @performance.id %>
-         <h3><p><%= @performance.song %> written by <%= @performance.artist %></p>
-             <p>Music Genre: <%= @performance.genre %></p></h3>
-      <% end %>
+<% @performances.each do |performance| %>
+  <% if performance.id == @performance.id %>
+    <h3><p><%= @performance.song %> written by <%= @performance.artist %></p>
+        <p>Music Genre: <%= @performance.genre %></p></h3>
     <% end %>
-
+  <% end %>
 <h2></h2>
-<h2>Replace the details you wish to edit/update below </h2>
-
+<h1><strong><%= current_user.name %></strong>, below you may edit the above song's details as you wish:</h1>
+<br>
 <form class="" action="/performances/<%= @performance.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <label for="name">Song Title:</label>
   <input type="text" name="song" placeholder="<%= @performance.song%>">
+  <br>
   <label for="name">Artist:</label>
   <input type="text" name="artist" placeholder="<%= @performance.artist%>">
+  <br>
   <label for="name">Genre:</label>
   <input type="text" name="genre" placeholder="<%= @performance.genre%>">
-  <%# performance.user_id value cannot be edited %>
   <br>
-  <input type="submit" name="" value="Edit Only the Details I Changed">
+    <%# performance.user_id value cannot be edited %>
+  <br>
+  <br>
+  <input class="button" type="submit" name="" value="Edit Only the Details I Changed">
 </form>
+<br><br>

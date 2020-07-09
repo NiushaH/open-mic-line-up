@@ -1,6 +1,4 @@
 require './config/environment'
-require 'sinatra/base'
-require 'sinatra/flash'
 
 class ApplicationController < Sinatra::Base
 
@@ -33,6 +31,7 @@ class ApplicationController < Sinatra::Base
     end
 
   
+
     # use this helper method to protect controller actions where user must be logged in to proceed
     def redirect_if_not_logged_in
       if !logged_in?
