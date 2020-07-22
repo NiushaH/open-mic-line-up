@@ -1,8 +1,10 @@
 # Open Mic Night
 A user will be able to sign up to sing a song for open mic night.
 
-This is my second project for the Flatiron software engineering web developer program.
- 
+This is my second project for the Flatiron School software engineering web developer program.
+
+* This is the minimum viable project submission.  [For more information, see inspiration and idea behind project on this blogpost:] (https://code-a-chrome.com/coding_is_like_art)
+
 Written using ActiveRecord, CSS, HTML, Ruby, and Sinatra.
 (c) 2020
 
