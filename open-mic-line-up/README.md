@@ -32,7 +32,7 @@ Feel free to contribute!  Please fork, clone, and submit a PR if you like!
 
 ## Versioning
 
-Version 1
+Version 1: 57% Ruby, 29% HTML, 14% CSS
 
 ## Authors
 
