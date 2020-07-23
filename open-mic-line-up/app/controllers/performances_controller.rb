@@ -96,7 +96,7 @@ class PerformancesController < ApplicationController
     set_performance_song
     if authorized_to_edit?(@performance)
       @performance.destroy
-      flash[:message] = "That song was wuccessfully deleted."
+      flash[:message] = "That song was successfully deleted."
     end
     redirect "/users/#{current_user.id}"
   end

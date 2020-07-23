@@ -35,7 +35,6 @@ class SessionsController < ApplicationController
   post '/signup' do
     # create new user and persist the new user to the database via params
     # incorporate condition that value user enters != nil and/or custom validator
-    if params[:name] != "" && params[:cellphone] != "" && params[:password] != ""
       # valid input
       @user = User.create(params)
       # login user after signup
@@ -51,9 +50,10 @@ class SessionsController < ApplicationController
       redirect "/users/#{@user.id}"
     # Stretch Goal: refactor this to use ActiveRecord validations
     else
-    # not valid input
-    # add message to tell user what is wrong
-    redirect '/signup'
+      # not valid input
+      # add message to tell user what is wrong
+      flash[:errors] = "Please attempt to create your user account again.  Name must be provided.  Cellphone requires 10 digit US phone number.  Password required."
+      redirect '/signup'
     end
   end
 

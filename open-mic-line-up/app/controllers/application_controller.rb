@@ -35,7 +35,7 @@ class ApplicationController < Sinatra::Base
     # use this helper method to protect controller actions where user must be logged in to proceed
     def redirect_if_not_logged_in
       if !logged_in?
-        flash[:errors] = "You must be logged in to view the page you tried to view."
+        flash[:errors] = "Please login to view that information."
         redirect '/'
       end
     end

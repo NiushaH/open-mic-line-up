@@ -186,7 +186,8 @@
   .errors {
     border-color: white;
     color: yellow;
-    font-size:26px;
+    line-height:1.5;
+    font-size:20px;
     text-align: center;
   }
 
