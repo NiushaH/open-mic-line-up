@@ -35,6 +35,7 @@ class SessionsController < ApplicationController
   post '/signup' do
     # create new user and persist the new user to the database via params
     # incorporate condition that value user enters != nil and/or custom validator
+    if params[:name] != "" && params[:cellphone].match?(/@"(?<!\d)\d{10}(?!\d)"/) && params[:password] != ""
       # valid input
       @user = User.create(params)
       # login user after signup
