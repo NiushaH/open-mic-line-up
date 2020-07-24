@@ -18,7 +18,7 @@ You will need to have Ruby installed on your machine - Linux or Mac.
 
 ## Video Links
 
-[Watch a screencast of this project in stage one!](http://) - A walkthrough of the user experience
+[Watch a screencast of this project in stage one!](https://youtu.be/qLQ-xQX5cAg) - A walkthrough of the user experience
 
 ## Built With
 
